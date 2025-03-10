@@ -6,15 +6,24 @@
     <title>Protected</title>
     <link rel="stylesheet" href="styles1.css">
     <script defer src="scripts1.js"></script>
-       <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script>
+        function checkPassword(event) {
+            var password = prompt("Please enter the password to upload a movie:");
+            var correctPassword = "9756";  // Replace with the actual password
+
+            if (password !== correctPassword) {
+                alert("Incorrect password!");
+                event.preventDefault();
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>YOU'RE IN</h1>
-        <a href="mailto:bentziyaari@gmail.com" class="edit-link">Upload A Movie</a>
+        <a href="edit1.html" id="upload-link" class="edit-link" onclick="checkPassword(event)">Upload A Movie</a>
     </header>
     <main id="movie-container"></main>
 </body>
 </html>
-
-
