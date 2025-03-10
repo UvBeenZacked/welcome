@@ -38,30 +38,17 @@ document.addEventListener("DOMContentLoaded", function () {
         movieForm.addEventListener("submit", function (event) {
             event.preventDefault();
             const title = document.getElementById("title").value;
-            const coverUrl = document.getElementById("cover").value;
-            const coverFile = document.getElementById("coverFile").files[0];
+            const cover = document.getElementById("cover").value;
             const link = document.getElementById("link").value;
 
-            let cover = coverUrl;
-            if (coverFile) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    cover = e.target.result;
-                    movies.push({ title, cover, link });
-                    localStorage.setItem("movies1", JSON.stringify(movies));
-                    displayMovies();
-                };
-                reader.readAsDataURL(coverFile);
-            } else {
-                movies.push({ title, cover, link });
-                localStorage.setItem("movies1", JSON.stringify(movies));
-                displayMovies();
-            }
+            movies.push({ title, cover, link });
+            localStorage.setItem("movies1", JSON.stringify(movies));
 
             document.getElementById("title").value = "";
             document.getElementById("cover").value = "";
-            document.getElementById("coverFile").value = "";
             document.getElementById("link").value = "";
+
+            displayMovies();
         });
     }
 
