@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayMovies() {
         if (movieContainer) {
             movieContainer.innerHTML = "";
-            movies.forEach((movie, index) => {
+            movies.forEach((movie) => {
                 const movieDiv = document.createElement("div");
                 movieDiv.classList.add("movie");
                 movieDiv.innerHTML = `
@@ -38,17 +38,30 @@ document.addEventListener("DOMContentLoaded", function () {
         movieForm.addEventListener("submit", function (event) {
             event.preventDefault();
             const title = document.getElementById("title").value;
-            const cover = document.getElementById("cover").value;
+            const coverUrl = document.getElementById("cover").value;
+            const coverFile = document.getElementById("coverFile").files[0];
             const link = document.getElementById("link").value;
 
-            movies.push({ title, cover, link });
-            localStorage.setItem("movies1", JSON.stringify(movies));
+            let cover = coverUrl;
+            if (coverFile) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    cover = e.target.result;
+                    movies.push({ title, cover, link });
+                    localStorage.setItem("movies1", JSON.stringify(movies));
+                    displayMovies();
+                };
+                reader.readAsDataURL(coverFile);
+            } else {
+                movies.push({ title, cover, link });
+                localStorage.setItem("movies1", JSON.stringify(movies));
+                displayMovies();
+            }
 
             document.getElementById("title").value = "";
             document.getElementById("cover").value = "";
+            document.getElementById("coverFile").value = "";
             document.getElementById("link").value = "";
-
-            displayMovies();
         });
     }
 
