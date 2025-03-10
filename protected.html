@@ -10,8 +10,21 @@
 <body>
     <header>
         <h1>Protected</h1>
-        <a href="edit1.html" class="edit-link">Edit Movies</a>
+        <a href="#" class="edit-link" onclick="checkPassword()">Edit Movies</a>
     </header>
     <main id="movie-container"></main>
+
+    <script>
+        function checkPassword() {
+            var password = prompt("Enter the password to access the edit page:");
+            var correctPassword = "24245"; // Replace with your desired password
+
+            if (password === correctPassword) {
+                window.location.href = "edit1.html";
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+    </script>
 </body>
 </html>
