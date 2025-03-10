@@ -10,8 +10,21 @@
 <body>
     <header>
         <h1>YOU'RE IN!</h1>
-        <a href="edit1.html" class="edit-link">Upload A Movie</a>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkPassword()">Submit</button>
+        <a href="edit1.html" class="edit-link" id="uploadLink" style="display:none;">Upload A Movie</a>
     </header>
     <main id="movie-container"></main>
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const correctPassword = 'yourpassword'; // Set your password here
+            if (password === correctPassword) {
+                document.getElementById('uploadLink').style.display = 'inline';
+            } else {
+                alert('Incorrect password');
+            }
+        }
+    </script>
 </body>
 </html>
