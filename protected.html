@@ -23,27 +23,4 @@
         <li>Avatar</li>
         <li>The Matrix</li>
         <li>Interstellar</li>
-        <li>Gladiator</li>
-    </ul>
-
-    <script>
-        function searchMovies() {
-            // Get the search input value
-            const searchValue = document.getElementById('searchInput').value.toLowerCase();
-            
-            // Get all the movie list items
-            const movies = document.querySelectorAll('#movieList li');
-            
-            // Loop through the movie list items and filter them based on the search value
-            movies.forEach(movie => {
-                const movieTitle = movie.textContent.toLowerCase();
-                if (movieTitle.includes(searchValue)) {
-                    movie.style.display = '';
-                } else {
-                    movie.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+ ▋
