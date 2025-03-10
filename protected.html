@@ -6,27 +6,13 @@
     <title>Protected</title>
     <link rel="stylesheet" href="styles1.css">
     <script defer src="scripts1.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <h1>CONGRATULATIONS. YOU'RE IN!</h1>
-        
-        <a href="#" class="edit-link" onclick="checkPassword(event)">Upload A Movie</a>
+        <h1>Protected</h1>
+        <a href="edit1.html" class="edit-link">Edit Movies</a>
     </header>
     <main id="movie-container"></main>
-
-    <script>
-        function checkPassword(event) {
-            event.preventDefault(); // Prevent the default link behavior
-            var password = prompt("Enter the password to access the edit page:");
-            var correctPassword = "24245"; // Replace with your desired password
-
-            if (password === correctPassword) {
-                window.location.href = "edit1.html";
-            } else {
-                alert("Incorrect password. Access denied.");
-            }
-        }
-    </script>
 </body>
 </html>
