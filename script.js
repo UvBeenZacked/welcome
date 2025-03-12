@@ -5,6 +5,7 @@ function checkPassword() {
     var correctPassword = "12345";
     var adminPassword = "24245";
     var sickminded = "6969";
+    var otheradmin = "2331";
 
     if (password === correctPassword) {
         window.location.href = "protected.html"; // Redirect to the protected page
@@ -12,6 +13,8 @@ function checkPassword() {
         window.location.href = "edit1.html"; // Redirect to the admin page
     } else if (password === sickminded) {
         window.location.href = "skmndd.html"; // Redirect to the sick minded page
+    }  else if (password === otheradmin) {
+        window.location.href = "edit1.html"; // Redirect to the admin page
     } else {
         document.getElementById("error-message").innerText = "Incorrect password. Try again.";
     }
