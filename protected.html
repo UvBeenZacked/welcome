@@ -11,7 +11,6 @@
         function checkPassword(event) {
             var password = prompt("Please enter the password to upload a movie:");
             var correctPassword = "9756";  // Replace with the actual password
-
             if (password !== correctPassword) {
                 alert("Incorrect password!");
                 event.preventDefault();
@@ -24,6 +23,15 @@
         <h1>YOU'RE IN</h1>
         <a href="edit1.html" id="upload-link" class="edit-link" onclick="checkPassword(event)">Upload A Movie</a>
     </header>
-    <main id="movie-container"></main>
+    <main id="movie-container">
+        <div class="movie-item">
+            <h2>Movie Name</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAroK3pT-eF0LMQ69_nWPILc8avxlZnjkYxQ&s" alt="Movie Poster">
+            <video controls>
+                <source src="https://drive.google.com/uc?export=download&id=1Pdw3wOkpkTlDn5Z0FtPztJpv_YPPbD_Q" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </main>
 </body>
 </html>
