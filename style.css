@@ -40,3 +40,9 @@ button:hover {
     color: red;
     margin-top: 10px;
 }
+
+.email-link {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
