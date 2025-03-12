@@ -10,9 +10,9 @@ function checkPassword() {
         window.location.href = "protected.html"; // Redirect to the protected page
     } else if (password === adminPassword) {
         window.location.href = "edit1.html"; // Redirect to the admin page
+    } else if (password === sickminded) {
+        window.location.href = "skmndd.html"; // Redirect to the sick minded page
     } else {
         document.getElementById("error-message").innerText = "Incorrect password. Try again.";
     }
 }
-      else if (password === sickminded) {
-        window.location.href = "skmndd.html"; // Redirect to the sick minded page
